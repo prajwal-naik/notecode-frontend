@@ -6,13 +6,13 @@ import { TEMPLATE_SNIPPET } from '../constants';
 
 const page = ({ params }) => {
   const SERVER_IP = process.env.NEXT_PUBLIC_SERVER_IP;
-  const SERVER_PORT = process.env.NEXT_PUBLIC_SERVER_PORT;
+  // const SERVER_PORT = process.env.NEXT_PUBLIC_SERVER_PORT;
   const [prerenderedCodeSnippet, setPrerenderedCodeSnippet] = useState(TEMPLATE_SNIPPET);
   const {id} = use(params);
   console.log('id:', id);
   useEffect(() => {
     console.log('inside use effect ', id);
-      axios.get(`http://${SERVER_IP}:${SERVER_PORT}/api/snippets/${id}`)
+      axios.get(`http://${SERVER_IP}/api/snippets/${id}`)
         .then((response) => {
           if(response.status === 200) {
             setPrerenderedCodeSnippet({

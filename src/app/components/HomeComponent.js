@@ -10,7 +10,7 @@ import Image from 'next/image';
 const HomeComponent = ({ prerenderedCodeSnippet }) => {
 
   const SERVER_IP = process.env.NEXT_PUBLIC_SERVER_IP;
-  const SERVER_PORT = process.env.NEXT_PUBLIC_SERVER_PORT;
+  // const SERVER_PORT = process.env.NEXT_PUBLIC_SERVER_PORT;
 
   const router = useRouter();
 
@@ -40,7 +40,7 @@ const HomeComponent = ({ prerenderedCodeSnippet }) => {
   };
 
   const handleShare = () => {
-    axios.post(`http://${SERVER_IP}:${SERVER_PORT}/api/snippets/`, {
+    axios.post(`http://${SERVER_IP}/api/snippets/`, {
       code: code,
       language: language,
       theme: theme
