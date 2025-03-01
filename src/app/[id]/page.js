@@ -12,7 +12,7 @@ const page = ({ params }) => {
   console.log('id:', id);
   useEffect(() => {
     console.log('inside use effect ', id);
-      axios.get(`http://${SERVER_IP}/api/snippets/${id}`)
+      axios.get(`https://${SERVER_IP}/api/snippets/${id}`)
         .then((response) => {
           if(response.status === 200) {
             setPrerenderedCodeSnippet({
@@ -21,7 +21,6 @@ const page = ({ params }) => {
               code: response.data.code,
               uuid: response.data._id
             });
-            console.log("###########Seting it:", prerenderedCodeSnippet);
           }
         }).catch((error) => {
           console.error("Error occured while fetching snippet: ", error);

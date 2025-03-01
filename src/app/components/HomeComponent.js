@@ -40,7 +40,7 @@ const HomeComponent = ({ prerenderedCodeSnippet }) => {
   };
 
   const handleShare = () => {
-    axios.post(`http://${SERVER_IP}/api/snippets/`, {
+    axios.post(`https://${SERVER_IP}/api/snippets/`, {
       code: code,
       language: language,
       theme: theme
